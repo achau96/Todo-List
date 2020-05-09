@@ -1,4 +1,4 @@
-var button = document.getElementById("enter");
+var enterButton = document.getElementById("enter");
 var input = document.getElementById("userinput");
 var ul = document.querySelector("ul");
 var listLength = ul.getElementsByTagName("li").length;
@@ -29,7 +29,7 @@ for (var i = 0; i<listLength; i++) {
 function createListElement() {
 	var li = document.createElement("li");
 	li.appendChild(document.createTextNode(input.value));
-	var button = deleteButton;
+	var button = deleteButton();
 	li.appendChild(button);
 	ul.appendChild(li);
 	input.value = "";
@@ -47,7 +47,7 @@ function addListAfterKeypress(event) {
 	}
 }
 
-button.addEventListener("click", addListAfterClick);
+enterButton.addEventListener("click", addListAfterClick);
 input.addEventListener("keypress", addListAfterKeypress);
 /* TOGGLE STRIKETHROUGH */
 ul.addEventListener("click", function(){
